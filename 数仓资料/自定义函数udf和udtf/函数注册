@@ -1,0 +1,5 @@
+add jar /home/medal/myProject/DataWareHouse/HiveFunction.jar;
+
+create temporary function base_analizer as 'com.udf.BaseFieldUDF';
+
+create temporary function flat_analizer as 'com.udtf.EventJsonUDTF';

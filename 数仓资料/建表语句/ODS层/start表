@@ -1,0 +1,11 @@
+建表
+drop table if exists ods_start_log;
+CREATE EXTERNAL TABLE ods_start_log (`line` string)
+PARTITIONED BY (`dt` string)
+LOCATION '/warehouse/gmall/ods/ods_start_log';
+
+加载数据
+load data local inpath '/home/medal/myProject/DataWareHouse/start-2019-12-14.log' into table gmall.ods_start_log partition(dt='2019-12-14');
+
+查看数据是否加载成功
+ select * from ods_start_log limit 2;
